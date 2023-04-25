@@ -13,7 +13,7 @@ use Pterodactyl\Models\MountServer;
 class ServerManagementController extends ApplicationApiController
 {
     /**
-     * ServerManagementController constructor.
+     * SuspensionController constructor.
      */
     public function __construct(
         private ReinstallServerService $reinstallServerService,
@@ -49,9 +49,7 @@ class ServerManagementController extends ApplicationApiController
     /**
      * Mark a server as needing to be reinstalled.
      *
-     * @throws \Pterodactyl\Exceptions\DisplayException
-     * @throws \Pterodactyl\Exceptions\Model\DataValidationException
-     * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
+     * @throws \Throwable
      */
     public function reinstall(ServerWriteRequest $request, Server $server): Response
     {
